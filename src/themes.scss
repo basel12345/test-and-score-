@@ -1,0 +1,21 @@
+/* _themes.scss */
+
+/* Default (light mode) */
+:root {
+    --primary-color: #154B89;
+    --secondary-color: #FFFFFF;
+    --mode-background-color: #F0F0F0;
+    --mode-border-color: #E5E7EB;
+    --background-color: #D1D5DB;
+    --background-color-layout: #F9FAFB;
+    --background-color-container: #E4EFFB;
+    --background-icon: #F3F4F6;
+    --border-one-direction: #E2E8F0;
+}
+
+/* Dark mode overrides */
+.dark-mode {
+    --bg-color: #121212;
+    --text-color: #ffffff;
+    --primary-color: #bb86fc;
+}

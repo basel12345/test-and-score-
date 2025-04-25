@@ -1,0 +1,62 @@
+<div class="row login-container">
+    <div class="col-12 col-md-6 cover"></div>
+    <div class="col-12 col-md-6 login">
+        <div class="mb-4 d-flex justify-content-center">
+            <img src="assets/media/logo/Logo.svg" alt="logo">
+        </div>
+        <h2>Login</h2>
+        <form class="mt-4" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="row">
+                <div class="col-12 mb-3">
+                    <label class="mb-2" for="emailId">Email</label>
+                    <input type="text" id="emailId" class="form-control" formControlName="email">
+                    @if (loginForm.controls['email'].invalid && submitted) {
+                    <div class="alert alert-danger">
+                        @if (loginForm.controls['email'].errors?.['required']) {
+                        <div>Email is required</div>
+                        }
+                        @if (loginForm.controls['email'].errors?.['email']) {
+                        <div>Invalid email address</div>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="col-12 mb-3">
+                    <label class="mb-2" for="passwordId">Password</label>
+                    <input type="password" id="passwordId" class="form-control" formControlName="password">
+                    @if (loginForm.controls['password'].invalid && submitted) {
+                    <div class="alert alert-danger">
+                        @if (loginForm.controls['password'].errors?.['required']) {
+                        <div>Password is required</div>
+                        }
+                        @if (loginForm.controls['password'].errors?.['minlength']) {
+                        <div>Password must be at least 8 characters long</div>
+                        }
+                    </div>
+                    }
+                </div>
+                <div class="row">
+                    <label class="col-6 d-flex justify-space-between" id="rememberMeLabel" for="rememberMe">
+                        <input id="rememberMe" type="checkbox" class="me-2">
+                        Remember me
+                    </label>
+                    <div class="col-6 text-end">
+                        <a>
+                            Forget password
+                        </a>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <button type="submit" class="mt-5 btn primary">Login</button>
+                </div>
+                <div class="col-12 or mt-4 text-center">
+                    <span>OR</span>
+                </div>
+                <div class="col-12">
+                    <button class="mt-5 btn primary-soft">Facebook</button>
+                    <button class="mt-2 btn primary-soft">Google</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

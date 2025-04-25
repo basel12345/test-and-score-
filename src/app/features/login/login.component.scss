@@ -1,0 +1,113 @@
+.login-container {
+    background-color: #F1F5F9;
+
+    .cover {
+        background-image: linear-gradient(0deg, rgba(10, 36, 66, 0.75), rgba(10, 36, 66, 0.75)), url("../../../assets/media/cover-login.jpg");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        min-height: 960px;
+    }
+
+    .login {
+        height: 100%;
+        padding: 135px 100px;
+        color: #154B89;
+        font-family: 'LoewNextBold';
+
+        h2 {
+            font-style: normal;
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 120%;
+            font-weight: 600;
+        }
+
+        label {
+            font-weight: 600;
+        }
+
+        input {
+            padding: 12px;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 21px;
+            letter-spacing: 0%;
+        }
+
+        #rememberMeLabel {
+            color: #111827;
+            font-weight: 400;
+
+            #rememberMe {
+                width: 20px;
+                height: 24px;
+                border-radius: 50%;
+            }
+        }
+
+        a {
+            cursor: pointer;
+            color: #3B82F6;
+        }
+
+        button {
+            width: 100%;
+            border-radius: 6px;
+            height: 44px;
+            font-weight: 600;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: center;
+        }
+
+        .primary {
+            background-color: #154B89;
+            color: white;
+
+            &:hover {
+                background-color: #0D3059;
+            }
+        }
+
+        .primary-soft {
+            border: 1px solid #154B89;
+            background-color: white;
+            color: #154B89;
+
+            &:hover {
+                background-color: #E4EFFB;
+            }
+        }
+
+        .or {
+            position: relative;
+
+            &::after {
+                content: "";
+                height: 1px;
+                border: 1px solid #D1D5DB;
+                width: 40%;
+                position: absolute;
+                bottom: 50%;
+                right: 11px;
+            }
+
+            &::before {
+                content: "";
+                height: 1px;
+                border: 1px solid #D1D5DB;
+                width: 40%;
+                position: absolute;
+                bottom: 50%;
+                left: 11px;
+            }
+
+            span {
+                color: #111827;
+            }
+        }
+
+    }
+}

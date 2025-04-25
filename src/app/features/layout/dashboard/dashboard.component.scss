@@ -1,0 +1,84 @@
+.dashboard-container {
+    .dashboard-header {
+        h1 {
+            font-family: 'LoewNextBold';
+            font-weight: 700;
+            font-size: 32px;
+            line-height: 48px;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            color: #111827;
+        }
+    }
+
+    .dashboard-progress {
+        background-color: var(--secondary-color);
+        padding: 32px 16px 15px 24px;
+        border-radius: 8px;
+        box-shadow: 0px 2px 10px 0px #919EAB33;
+
+        h3 {
+            font-family: 'LoewNextBold';
+            font-weight: 700;
+            font-size: 18px;
+            line-height: 26px;
+            letter-spacing: 0%;
+            vertical-align: middle;
+        }
+
+        .dashboard-progress-item-title {
+            position: relative;
+
+            &::after {
+                content: "";
+                display: block;
+                width: 1px;
+                height: 100%;
+                background-color: var(--background-color);
+                position: absolute;
+                right: 0;
+                bottom: 0;
+            }
+        }
+
+        .progress-item-title {
+            font-family: 'LoewNextBold';
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 24px;
+            letter-spacing: 0%;
+            vertical-align: middle;
+            color: #212B36;
+
+            span {
+                cursor: pointer;
+            }
+        }
+
+        .progress {
+            height: 24px;
+
+            .progress-bar {
+                background-color: #3B82F6;
+            }
+
+            .progress-green {
+                background-color: #10B981;
+            }
+        }
+
+        .progress-percentage {
+            color: #6B7280;
+        }
+
+        .progress-title {
+            font-family: "LoewNextBold";
+            font-weight: 700;
+            font-size: 16px;
+            line-height: 20px;
+            letter-spacing: 0%;
+            text-align: center;
+
+        }
+    }
+}
