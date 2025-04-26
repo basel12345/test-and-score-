@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { TabsModule } from 'primeng/tabs';
 import { PaginationComponent } from '../../../components/pagination/pagination.component';
+import { TableComponent } from '../../../components/table/table.component';
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [TabsModule, PaginationComponent],
+  imports: [TabsModule, PaginationComponent, TableComponent],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })

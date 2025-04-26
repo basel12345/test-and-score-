@@ -69,10 +69,10 @@
             <div class="row">
                 <div class="col-6">
                     <p-tablist class="mb-4">
-                        <p-tab class="me-2" value="0">Full Speaking Test Progress</p-tab>
-                        <p-tab class="me-2" value="1">Part 1</p-tab>
-                        <p-tab class="me-2" value="2">Part 2</p-tab>
-                        <p-tab class="me-2" value="3">Part 3</p-tab>
+                        <p-tab class="me-2" value="0" (click)="title = 'Full Speaking Test Progress'">Full Speaking Test Progress</p-tab>
+                        <p-tab class="me-2" value="1" (click)="title = 'Part 1'">Part 1</p-tab>
+                        <p-tab class="me-2" value="2" (click)="title = 'Part 2'">Part 2</p-tab>
+                        <p-tab class="me-2" value="3" (click)="title = 'Part 3'">Part 3</p-tab>
                     </p-tablist>
                 </div>
                 <div class="col-6 d-flex justify-content-end  filter">
@@ -87,256 +87,16 @@
             </div>
             <p-tabpanels>
                 <p-tabpanel value="0">
-                    <table class="w-100">
-                        <thead>
-                            <tr class="row d-flex justify-content-center align-items-center">
-                                <th class="col">Test</th>
-                                <th class="col">Part 1</th>
-                                <th class="col">Part 2</th>
-                                <th class="col">Part 3</th>
-                                <th class="col">Score</th>
-                                <th class="col">Status</th>
-                                <th class="col">...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of items; track $index; let isOdd = $odd) {
-                            <tr class="row d-flex justify-content-center align-items-center" [class.odd-row]="isOdd">
-                                <td class="col">{{item.test}}</td>
-                                <td class="col">{{item.part1}}</td>
-                                <td class="col">{{item.part2}}</td>
-                                <td class="col">{{item.part3}}</td>
-                                <td class="col">{{item.score}}</td>
-                                <td class="col">
-                                    @if(item.status === 'Incomplete') {
-                                    <p class="status status-error mt-2">
-                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="var(--status-error-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'In Progress') {
-                                    <p class="status status-warning mt-2">
-                                        <img src="assets/media/icons/time-warnning.svg" alt="time-warnning">
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'Competed') {
-                                    <p class="status status-success mt-2">
-                                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="var(--status-success-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    }
-                                </td>
-                                <td class="col mb-2">
-                                    <button class="btn primary">{{item.practice}}</button>
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <app-table [items]="items" />
                 </p-tabpanel>
                 <p-tabpanel value="1">
-                    <table class="w-100">
-                        <thead>
-                            <tr class="row d-flex justify-content-center align-items-center">
-                                <th class="col">Test</th>
-                                <th class="col">Part 1</th>
-                                <th class="col">Part 2</th>
-                                <th class="col">Part 3</th>
-                                <th class="col">Score</th>
-                                <th class="col">Status</th>
-                                <th class="col">...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of items; track $index; let isOdd = $odd) {
-                            <tr class="row d-flex justify-content-center align-items-center" [class.odd-row]="isOdd">
-                                <td class="col">{{item.test}}</td>
-                                <td class="col">{{item.part1}}</td>
-                                <td class="col">{{item.part2}}</td>
-                                <td class="col">{{item.part3}}</td>
-                                <td class="col">{{item.score}}</td>
-                                <td class="col">
-                                    @if(item.status === 'Incomplete') {
-                                    <p class="status status-error mt-2">
-                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="var(--status-error-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'In Progress') {
-                                    <p class="status status-warning mt-2">
-                                        <img src="assets/media/icons/time-warnning.svg" alt="time-warnning">
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'Competed') {
-                                    <p class="status status-success mt-2">
-                                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="var(--status-success-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    }
-                                </td>
-                                <td class="col mb-2">
-                                    <button class="btn primary">{{item.practice}}</button>
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <app-table [items]="items" />
                 </p-tabpanel>
                 <p-tabpanel value="2">
-                    <table class="w-100">
-                        <thead>
-                            <tr class="row d-flex justify-content-center align-items-center">
-                                <th class="col">Test</th>
-                                <th class="col">Part 1</th>
-                                <th class="col">Part 2</th>
-                                <th class="col">Part 3</th>
-                                <th class="col">Score</th>
-                                <th class="col">Status</th>
-                                <th class="col">...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of items; track $index; let isOdd = $odd) {
-                            <tr class="row d-flex justify-content-center align-items-center" [class.odd-row]="isOdd">
-                                <td class="col">{{item.test}}</td>
-                                <td class="col">{{item.part1}}</td>
-                                <td class="col">{{item.part2}}</td>
-                                <td class="col">{{item.part3}}</td>
-                                <td class="col">{{item.score}}</td>
-                                <td class="col">
-                                    @if(item.status === 'Incomplete') {
-                                    <p class="status status-error mt-2">
-                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="var(--status-error-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'In Progress') {
-                                    <p class="status status-warning mt-2">
-                                        <img src="assets/media/icons/time-warnning.svg" alt="time-warnning">
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'Competed') {
-                                    <p class="status status-success mt-2">
-                                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="var(--status-success-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    }
-                                </td>
-                                <td class="col mb-2">
-                                    <button class="btn primary">{{item.practice}}</button>
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <app-table [items]="items" />
                 </p-tabpanel>
                 <p-tabpanel value="3">
-                    <table class="w-100">
-                        <thead>
-                            <tr class="row d-flex justify-content-center align-items-center">
-                                <th class="col">Test</th>
-                                <th class="col">Part 1</th>
-                                <th class="col">Part 2</th>
-                                <th class="col">Part 3</th>
-                                <th class="col">Score</th>
-                                <th class="col">Status</th>
-                                <th class="col">...</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            @for (item of items; track $index; let isOdd = $odd) {
-                            <tr class="row d-flex justify-content-center align-items-center" [class.odd-row]="isOdd">
-                                <td class="col">{{item.test}}</td>
-                                <td class="col">{{item.part1}}</td>
-                                <td class="col">{{item.part2}}</td>
-                                <td class="col">{{item.part3}}</td>
-                                <td class="col">{{item.score}}</td>
-                                <td class="col">
-                                    @if(item.status === 'Incomplete') {
-                                    <p class="status status-error mt-2">
-                                        <svg width="13" height="12" viewBox="0 0 13 12" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="var(--status-error-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M6.66658 1.33366C4.08926 1.33366 1.99992 3.423 1.99992 6.00033C1.99992 8.57765 4.08926 10.667 6.66658 10.667C9.24391 10.667 11.3333 8.57765 11.3333 6.00033C11.3333 3.423 9.24391 1.33366 6.66658 1.33366ZM0.833252 6.00033C0.833252 2.77866 3.44492 0.166992 6.66658 0.166992C9.88825 0.166992 12.4999 2.77866 12.4999 6.00033C12.4999 9.22199 9.88825 11.8337 6.66658 11.8337C3.44492 11.8337 0.833252 9.22199 0.833252 6.00033ZM6.66658 3.08366C6.98875 3.08366 7.24992 3.34483 7.24992 3.66699V6.00033C7.24992 6.32249 6.98875 6.58366 6.66658 6.58366C6.34442 6.58366 6.08325 6.32249 6.08325 6.00033V3.66699C6.08325 3.34483 6.34442 3.08366 6.66658 3.08366ZM6.08325 8.33366C6.08325 8.01149 6.34442 7.75033 6.66658 7.75033H6.67242C6.99459 7.75033 7.25575 8.01149 7.25575 8.33366C7.25575 8.65582 6.99459 8.91699 6.67242 8.91699H6.66658C6.34442 8.91699 6.08325 8.65582 6.08325 8.33366Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'In Progress') {
-                                    <p class="status status-warning mt-2">
-                                        <img src="assets/media/icons/time-warnning.svg" alt="time-warnning">
-                                        {{item.status}}
-                                    </p>
-                                    } @else if(item.status === 'Competed') {
-                                    <p class="status status-success mt-2">
-                                        <svg width="10" height="8" viewBox="0 0 10 8" fill="none"
-                                            xmlns="http://www.w3.org/2000/svg">
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="var(--status-success-color)" />
-                                            <path fill-rule="evenodd" clip-rule="evenodd"
-                                                d="M9.16248 0.670854C9.39029 0.89866 9.39029 1.26801 9.16248 1.49581L3.32915 7.32915C3.10134 7.55695 2.73199 7.55695 2.50419 7.32915L0.170854 4.99581C-0.0569515 4.76801 -0.0569515 4.39866 0.170854 4.17085C0.39866 3.94305 0.768007 3.94305 0.995812 4.17085L2.91667 6.09171L8.33752 0.670854C8.56533 0.443049 8.93467 0.443049 9.16248 0.670854Z"
-                                                fill="black" fill-opacity="0.2" />
-                                        </svg>
-                                        {{item.status}}
-                                    </p>
-                                    }
-                                </td>
-                                <td class="col mb-2">
-                                    <button class="btn primary">{{item.practice}}</button>
-                                </td>
-                            </tr>
-                            }
-                        </tbody>
-                    </table>
+                    <app-table [items]="items" />
                 </p-tabpanel>
             </p-tabpanels>
         </p-tabs>

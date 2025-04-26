@@ -1,0 +1,68 @@
+table {
+    thead {
+        tr {
+            font-family: 'LoewNextBold';
+            height: 60px;
+            padding: 16px 24px;
+            background-color: var(--background-color-container);
+            color: var(--header-table-color);
+        }
+    }
+
+    tbody {
+        tr {
+            font-family: 'LoewNextMeduim';
+            height: 50px;
+            padding-inline: 24px;
+            background-color: var(--secondary-color);
+            color: var(--progress-item-title-color);
+
+            &:hover {
+                background-color: var(--background-color-row-hover);
+                cursor: pointer;
+            }
+
+            .primary {
+                background-color: #154B89;
+                color: white;
+                height: 100%;
+
+                &:hover {
+                    background-color: #0D3059;
+                }
+            }
+
+            .status {
+                width: 100px;
+                padding: 6px 8px;
+                font-size: 11px;
+                border-radius: 4px;
+                gap: 4px;
+                font-family: 'LoewNextBold';
+            }
+
+            .status-error {
+                background-color: var(--status-error-background);
+                color: var(--status-error-color);
+                border: 1.5px solid #A00E0E;
+            }
+
+            .status-warning {
+                background-color: var(--status-warning-background);
+                color: #AB6E07;
+                border: 1.5px solid #AB6E07;
+            }
+
+            .status-success {
+                background-color: var(--status-success-background);
+                color: var(--status-success-color);
+                border: 1.5px solid #0A7552;
+            }
+
+        }
+
+        .odd-row {
+            background-color: var(--background-color-odd-row);
+        }
+    }
+}
