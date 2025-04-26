@@ -10,3 +10,9 @@
         // height: 855px;
     }
 }
+
+::ng-deep {
+    .container-fluid {
+        padding: 0;
+    }
+}
