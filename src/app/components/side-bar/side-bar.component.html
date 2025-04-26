@@ -1,10 +1,14 @@
 <div class="side-bar">
     <div class="side-bar-header">
-        <img loading="lazy" src="assets/media/logo/Logo.svg" alt="logo" class="logo">
+        @if(themeModeService.isDarkMode) {
+            <img loading="lazy" src="assets/media/logo/Logo Solid.svg" alt="logo" class="logo">
+        } @else {
+            <img loading="lazy" src="assets/media/logo/Logo.svg" alt="logo" class="logo">
+        }
     </div>
     <div class="side-bar-body">
         <ul class="side-bar-menu">
-            <li class="side-bar-menu-item active mb-2">
+            <li class="side-bar-menu-item mb-2" [routerLink]="['/dashboard']" routerLinkActive="active">
                 <a class="side-bar-menu-item-link d-flex align-items-center">
                     <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -99,7 +103,7 @@
             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M0.32666 12.4204L1.50666 13.6004L8.10666 7.00039L1.50666 0.400391L0.32666 1.58039L5.74666 7.00039L0.32666 12.4204Z"
-                    fill="#111827" />
+                    fill="var(--side-bar-menu-item-link)" />
             </svg>
 
         </div>
@@ -133,7 +137,7 @@
             <svg width="9" height="14" viewBox="0 0 9 14" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M0.32666 12.4204L1.50666 13.6004L8.10666 7.00039L1.50666 0.400391L0.32666 1.58039L5.74666 7.00039L0.32666 12.4204Z"
-                    fill="#111827" />
+                    fill="var(--side-bar-menu-item-link)" />
             </svg>
 
         </div>

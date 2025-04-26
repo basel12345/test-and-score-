@@ -2,6 +2,7 @@
 
 /* Default (light mode) */
 :root {
+    --background-color-page: #F1F5F9;
     --primary-color: #154B89;
     --secondary-color: #FFFFFF;
     --mode-background-color: #F0F0F0;
@@ -11,11 +12,54 @@
     --background-color-container: #E4EFFB;
     --background-icon: #F3F4F6;
     --border-one-direction: #E2E8F0;
+    --background-color-icon-navbar: #0F172A;
+    --side-bar-menu-item-link: #111827;
+    --side-bar-shadow-color: #0000001A;
+    --side-bar-footer-shadow-color: #A3A3A340;
+    --progress-item-title-color: #212B36;
+    --header-table-color: #0D3059;
+    --background-color-odd-row: #F3F4F6;
+    --background-color-row-hover: #E5E7EB;
+    --status-error-background: #FDE3E3;
+    --status-error-color: #A00E0E;
+    --status-success-color: #0A7552;
+    --status-success-background: #e5f4f3;
+    --status-warning-background: #FEF1DD;
+    --active-mode-color: #FFFFFF;
+    --filter-button-color: #4B5563;
+    --dashboard-progress-shadow: #919EAB33;
+    --incomplete-color: #000000;
+    --pages-number-color: #111827;
+    --pages-number-background: #FFFFFF;
 }
 
 /* Dark mode overrides */
 .dark-mode {
-    --bg-color: #121212;
-    --text-color: #ffffff;
-    --primary-color: #bb86fc;
+    --background-color-page: #0d0d0d;
+    --background-color-layout: #121212;
+    --background-color: #2F343C;
+    --mode-background-color: #262626;
+    --mode-border-color: #262626;
+    --background-color-icon-navbar: #D5DDF0;
+    --side-bar-menu-item-link: #D1D5DB;
+    --secondary-color: #121212;
+    --side-bar-shadow-color: #0000001F;
+    --side-bar-footer-shadow-color: transparent;
+    --progress-item-title-color: #D1D5DB;
+    --background-color-container: #071B31;
+    --header-table-color: #93C5FD;
+    --background-color-odd-row: #1A1C1E;
+    --background-color-row-hover: #24282E;
+    --primary-color: #E4EFFB;
+    --status-error-background: #340404;
+    --status-error-color: #EA5C7A;
+    --status-success-color: #0FAB9E;
+    --status-success-background: #0d1c1b;
+    --status-warning-background: #3B2602;
+    --active-mode-color: #9CA3AF;
+    --filter-button-color: #E5E7EB;
+    --dashboard-progress-shadow: #919EAB0D;
+    --incomplete-color: #FFFFFF;
+    --pages-number-color: #D8DFEE;
+    --pages-number-background: #0D0D0D;
 }

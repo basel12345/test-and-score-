@@ -2,7 +2,6 @@
 
 .navbar {
     background-color: var(--background-color-layout);
-    border-bottom: 1px solid var(--background-color);
     height: 80px;
     padding-right: 24px;
     padding-left: 24px;
@@ -33,18 +32,18 @@
                 padding-left: 12px;
                 border-radius: 8px;
                 border: none;
-                background-color: var(--primary-color);
-                color: var(--secondary-color);
-                path {
-                    fill: var(--secondary-color);
-                }
-            }
-
-            .active {
                 color: black;
                 background-color: transparent;
                 path {
                     fill: var(--primary-color);
+                }
+            }
+
+            .active {
+                background-color: #154B89;
+                color: var(--active-mode-color);
+                path {
+                    fill: var(--active-mode-color);
                 }
             }
         }
