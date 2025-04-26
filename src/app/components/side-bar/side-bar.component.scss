@@ -2,7 +2,9 @@
     height: 833px;
     width: 268px;
     box-shadow: 1px 0px 8px 0px var(--side-bar-shadow-color);
-    background-color: var(--secondary-color);
+    background-color: var(--side-bar-background-color);
+    z-index: 99999999;
+    position: relative;
 
     .side-bar-header {
         padding: 16px;
