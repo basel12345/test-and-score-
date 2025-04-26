@@ -12,7 +12,7 @@
     }
 
     .dashboard-progress {
-        background-color: var(--secondary-color);
+        background-color: var(--side-bar-background-color);
         padding: 32px 16px 15px 24px;
         border-radius: 8px;
         box-shadow: 0px 2px 10px 0px var(--dashboard-progress-shadow);
@@ -86,7 +86,7 @@
 
 
     .dashboard-grid {
-        background-color: var(--secondary-color);
+        background-color: var(--side-bar-background-color);
 
         ::ng-deep {
             .p-tabs {
@@ -136,9 +136,10 @@
                 }
 
                 .p-tab-active {
+                    font-family: 'LoewNextMeduim';
                     background: var(--p-tabs-tab-active-background);
-                    border-bottom: 2px solid #154B89 !important;
-                    color: #154B89 !important;
+                    border-bottom: 2px solid var(--tabs-color) !important;
+                    color: var(--tabs-color) !important;
                 }
             }
         }
