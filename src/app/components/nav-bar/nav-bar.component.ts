@@ -13,6 +13,15 @@ export class NavBarComponent {
   mode: boolean = true;
   isDarkMode: boolean = false;
   isBrowser!: boolean;
+  isLang!: boolean;
+  isNotFication!: boolean;
+  constructor(public themeModeService: ThemeModeService) { }
 
-  constructor(public themeModeService: ThemeModeService) {}
+  changeLang(lang: string) {
+    this.isLang = false;
+  }
+
+  selectNotification() {
+    this.isNotFication = false;
+  }
 }

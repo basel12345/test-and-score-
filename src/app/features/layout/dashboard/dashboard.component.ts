@@ -10,6 +10,7 @@ import { TableComponent } from '../../../components/table/table.component';
   styleUrl: './dashboard.component.scss'
 })
 export class DashboardComponent {
+  isFilter: boolean = false;
   title: string = 'Full Speaking Test Progress';
   items: any[] = [
     {
