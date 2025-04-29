@@ -16,7 +16,7 @@
             </a>
             @if (isLang) {
             <div #menuDivLang class="drop-down">
-                <ul class="p-0">
+                <ul class="p-0 m-0">
                     <li class="p-2">
                         <a [ngClass]="language === 'AR'? 'active': ''" (click)="changeLang('AR')">AR</a>
                     </li>
@@ -43,7 +43,7 @@
             </a>
             @if (isNotFication) {
             <div #menuDivNotification class="drop-down notfication">
-                <ul class="p-0">
+                <ul class="p-0 m-0">
                     <li class="p-2">
                         <a [ngClass]="notfication === 'Notification 1'? 'active': ''"
                             (click)="selectNotification('Notification 1')">Notification 1</a>
