@@ -109,15 +109,21 @@
                 border: 1px solid var(--pages-number-background);
                 color: var(--side-bar-menu-item-link-drop-down) !important;
                 padding: 10px;
+
                 &:hover {
-                    color: var(--color-practice);
-                    border: 1px solid var(--color-practice);
-                    background-color: var(--background-color-practice);
+                    cursor: pointer;
+                    background-color: var(--background-color-container);
                 }
+            }
+
+            .active {
+                cursor: pointer;
+                background-color: var(--background-color-container);
+                text-decoration: none;
             }
         }
     }
-    
+
 }
 
 

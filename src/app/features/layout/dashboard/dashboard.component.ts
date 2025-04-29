@@ -1,25 +1,28 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, HostListener, OnInit, ViewChild } from '@angular/core';
 import { TabsModule } from 'primeng/tabs';
 import { PaginationComponent } from '../../../components/pagination/pagination.component';
 import { TableComponent } from '../../../components/table/table.component';
+import { CommonModule } from '@angular/common';
+declare var bootstrap: any;
+
 @Component({
   selector: 'app-dashboard',
   standalone: true,
-  imports: [TabsModule, PaginationComponent, TableComponent],
+  imports: [TabsModule, PaginationComponent, TableComponent, CommonModule],
   templateUrl: './dashboard.component.html',
   styleUrl: './dashboard.component.scss'
 })
-export class DashboardComponent {
+export class DashboardComponent implements OnInit {
   isFilter: boolean = false;
   title: string = 'Full Speaking Test Progress';
-  items: any[] = [
+  allItems: any[] = [
     {
       test: 'Test 1',
       part1: '7.0',
       part2: '7.0',
       part3: '7.0',
       score: '7.0',
-      status: 'Competed',
+      status: 'Compeleted',
       practice: 'Practice'
     },
     {
@@ -122,4 +125,38 @@ export class DashboardComponent {
       practice: 'Practice'
     }
   ]
+  items: any[] = [];
+  @ViewChild('menuDiv') menuDiv!: ElementRef;
+  @ViewChild('menuBtn') menuBtn!: ElementRef;
+  statusFilter!: string;
+  @HostListener('document:click', ['$event'])
+  onDocumentClick(event: MouseEvent): void {
+    const clickedInside = this.menuDiv?.nativeElement.contains(event.target);
+    const clickedBtn = this.menuBtn?.nativeElement.contains(event.target);
+    if (!clickedInside && !clickedBtn) {
+      this.isFilter = false;
+    }
+  }
+
+
+  ngOnInit(): void {
+    this.items = this.allItems.map(res => res);
+  }
+
+  ngAfterViewInit(): void {
+    const tooltipTriggerList = [].slice.call(
+      document.querySelectorAll('[data-bs-toggle="tooltip"]')
+    );
+    tooltipTriggerList.map((tooltipTriggerEl) => {
+      new bootstrap.Tooltip(tooltipTriggerEl);
+    });
+  }
+
+
+
+  filter(search: string) {
+    this.statusFilter = search;
+    this.items = this.allItems.filter(res => res.status === search);
+    this.isFilter = false;
+  }
 }

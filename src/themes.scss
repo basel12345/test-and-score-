@@ -12,9 +12,10 @@
     --background-color-layout: #F9FAFB;
     --background-color-container: #E4EFFB;
     --background-color-container-table: #E4EFFB;
+    --background-color-icon-navbar: #E4EFFB;
+    --color-icon-navbar: #0F172A;
     --background-icon: #F3F4F6;
     --border-one-direction: #E2E8F0;
-    --background-color-icon-navbar: #0F172A;
     --side-bar-menu-item-link: #111827;
     --side-bar-shadow-color: #0000001A;
     --side-bar-footer-shadow-color: #A3A3A340;
@@ -40,6 +41,8 @@
     --side-bar-menu-item-link-drop-down: #111827;
     --color-practice: #D1D5DB;
     --background-color-practice: #0D3059;
+    --background-color-tooltip:#1B2230;
+    --color-tooltip:#CED5E3;
 }
 
 /* Dark mode overrides */
@@ -50,8 +53,9 @@
     --background-color: #2F343C;
     --mode-background-color: #262626;
     --mode-border-color: #262626;
-    --background-color-icon-navbar: #D5DDF0;
     --side-bar-menu-item-link: #D1D5DB;
+    --background-color-icon-navbar: #262626;
+    --color-icon-navbar: #D5DDF0;
     --secondary-color: #121212;
     --side-bar-shadow-color: #000000ac;
     --side-bar-footer-shadow-color: transparent;
@@ -63,7 +67,7 @@
     --background-color-row-hover: #24282E;
     --primary-color: #E4EFFB;
     --status-error-background: #620909;
-    --status-error-color: #EF4848;
+    --status-error-color: #e56767;
     --status-success-color: #13D3C3;
     --status-success-background: #042F2B;
     --status-warning-color: #F59F0A;
@@ -79,5 +83,7 @@
     --status-error-color-filter: #EA5C7A;
     --side-bar-menu-item-link-drop-down: #D8DFEE;
     --color-practice: white;
-    --background-color-practice: transparent;
+    --background-color-practice: #646AF2;
+    --background-color-tooltip:#CED5E3;
+    --color-tooltip:#1B2230;
 }

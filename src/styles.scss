@@ -12,5 +12,26 @@
 }
 
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Customize Bootstrap tooltip */
+.tooltip {
+    .tooltip-inner {
+        background-color: var(--background-color-tooltip) !important; // your custom background
+        color: var(--color-tooltip) !important;
+        width: 130px;
+    }
+}
+
+.bs-tooltip-top .tooltip-arrow::before,
+.bs-tooltip-auto[data-popper-placement^=top] .tooltip-arrow::before {
+    border-top-color: var(--background-color-tooltip) !important;
+}

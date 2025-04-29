@@ -1,4 +1,6 @@
 table {
+    min-height: 129px;
+
     thead {
         tr {
             font-family: 'LoewNextBold';
@@ -33,16 +35,15 @@ table {
                 letter-spacing: 0;
                 text-align: center;
                 padding-bottom: 7px;
-                
+
                 &:hover {
                     color: var(--color-practice);
-                    border: 1px solid var(--color-practice);
                     background-color: var(--background-color-practice);
                 }
             }
 
             .status {
-                width: 100px;
+                width: 102px;
                 padding: 6px 8px;
                 border-radius: 4px;
                 gap: 4px;
@@ -70,7 +71,8 @@ table {
             .status-success {
                 background-color: var(--status-success-background);
                 color: var(--status-success-color);
-                border: 1.5px solid var(--status-success-color);;
+                border: 1.5px solid var(--status-success-color);
+                ;
             }
 
         }
