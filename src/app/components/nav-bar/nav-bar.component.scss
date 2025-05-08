@@ -84,10 +84,10 @@
     max-height: 300px;
     overflow-y: auto;
     top: 61px;
+    right: 0;
     border-radius: 8px;
     border-width: 1px;
     padding: 4px;
-    right: 0;
     position: absolute;
     z-index: 9;
 
@@ -147,4 +147,48 @@
 
 .notfication {
     width: 330px !important;
+    overflow: auto;
+
+    ul {
+        overflow: auto;
+    }
+}
+
+.icon-menu {
+    color: var(--color-icon-navbar);
+    display: none;
+
+    &:hover {
+        cursor: pointer;
+    }
+
+}
+
+.navbar[dir="rtl"]  {
+    .drop-down {
+        left: 0;
+        right: auto;
+    }
+}
+
+@media (max-width: 440px) {
+
+    .notfication {
+        width: 90dvw !important;
+        right: -53px;
+    }
+
+    .mode {
+        width: 90px !important;
+
+        button {
+            width: 35px !important;
+        }
+    }
+}
+
+@media screen and (max-width: 960px) {
+    .icon-menu {
+        display: block;
+    }
 }

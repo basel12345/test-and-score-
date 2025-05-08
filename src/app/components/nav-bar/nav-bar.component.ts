@@ -1,7 +1,8 @@
-import { Component, ElementRef, HostListener, ViewChild } from '@angular/core';
+import { Component, ElementRef, HostListener, ViewChild, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { ThemeModeService } from '../../shared/services/theme-mode/theme-mode.service';
+import { SideBarService } from '../../shared/services/side-bar.service';
 @Component({
   selector: 'app-nav-bar',
   standalone: true,
@@ -9,7 +10,7 @@ import { ThemeModeService } from '../../shared/services/theme-mode/theme-mode.se
   templateUrl: './nav-bar.component.html',
   styleUrl: './nav-bar.component.scss'
 })
-export class NavBarComponent {
+export class NavBarComponent implements OnInit {
   mode: boolean = true;
   isDarkMode: boolean = false;
   isBrowser!: boolean;
@@ -22,6 +23,8 @@ export class NavBarComponent {
   @ViewChild('menuDivNotification') menuDivNotification!: ElementRef;
   @ViewChild('menuBtnNotification') menuBtnNotification!: ElementRef;
   statusFilter!: string;
+  screenHeight!: number;
+  screenWidth!: number;
   @HostListener('document:click', ['$event'])
   onDocumentClick(event: MouseEvent): void {
     const clickedInsideLang = this.menuDivLang?.nativeElement.contains(event.target);
@@ -36,15 +39,43 @@ export class NavBarComponent {
       this.isNotFication = false;
     }
   }
-  constructor(public themeModeService: ThemeModeService) { }
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event: any) {
+    this.getScreenSize();
+  }
+
+  constructor(
+    public themeModeService: ThemeModeService,
+    private sidebarService: SideBarService
+  ) { }
+
+
+  ngOnInit() {
+    this.getScreenSize();
+  }
 
   changeLang(lang: string) {
     this.language = lang;
     this.isLang = false;
+    if (lang === "AR") localStorage.setItem("dir", 'rtl');
+    else localStorage.setItem("dir", 'ltr');
+    location.reload();
   }
 
   selectNotification(notfication: string) {
     this.isNotFication = false;
     this.notfication = notfication;
+  }
+
+
+  getScreenSize() {
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+  }
+
+  toogleSideBar() {
+    this.sidebarService.openSideBar = !this.sidebarService.openSideBar;
   }
 }

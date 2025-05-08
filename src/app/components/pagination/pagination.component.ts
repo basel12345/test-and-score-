@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { SelectModule } from 'primeng/select';
 import { FormsModule } from '@angular/forms';
+import { ThemeModeService } from '../../shared/services/theme-mode/theme-mode.service';
 @Component({
   selector: 'app-pagination',
   standalone: true,
@@ -15,6 +16,8 @@ export class PaginationComponent {
   page: number = 0;
   index: number = 1;
   currentPage: number = 1;
+
+  constructor(public themeModeService: ThemeModeService) {}
 
   get pageNumbers(): number[] {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);

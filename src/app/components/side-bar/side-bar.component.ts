@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { ThemeModeService } from '../../shared/services/theme-mode/theme-mode.service';
+import { CommonModule } from '@angular/common';
 @Component({
   selector: 'app-side-bar',
   standalone: true,
-  imports: [RouterModule],
+  imports: [RouterModule, CommonModule],
   templateUrl: './side-bar.component.html',
   styleUrl: './side-bar.component.scss'
 })

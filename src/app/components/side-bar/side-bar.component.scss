@@ -1,5 +1,5 @@
 .side-bar {
-    height: 100vh;
+    height: 100%;
     width: 268px;
     box-shadow: 1px 0px 8px 0px var(--side-bar-shadow-color);
     background-color: var(--side-bar-background-color);
@@ -45,9 +45,20 @@
                 border-radius: 4px;
                 padding: 6px 20px;
                 font-family: "LoewNextMeduim";
+
                 
+
                 &:hover {
                     cursor: pointer;
+                    background-color: var(--background-color-container);
+
+                    .side-bar-menu-item-link {
+                        color: var(--primary-color);
+
+                        path {
+                            fill: var(--primary-color);
+                        }
+                    }
                 }
 
                 .side-bar-menu-item-link {
@@ -84,6 +95,7 @@
         border-top: 1px solid var(--background-color);
         box-shadow: 0px 8px 40px 8px var(--side-bar-footer-shadow-color);
         color: var(--side-bar-menu-item-link);
+
         .side-bar-footer-item {
 
             &:hover {

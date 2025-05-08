@@ -1,6 +1,12 @@
-.footer { 
+.footer {
     height: 40px;
     padding: 16px 24px;
     background-color: #326CE2;
     color: #FFFFFF;
+}
+
+@media (max-width: 323px) {
+    .footer {
+        font-size: 10px;
+    }
 }

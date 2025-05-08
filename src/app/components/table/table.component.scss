@@ -1,4 +1,5 @@
 table {
+    width: 100%;
     min-height: 129px;
 
     thead {
@@ -79,6 +80,36 @@ table {
 
         .odd-row {
             background-color: var(--background-color-odd-row);
+        }
+    }
+}
+
+@media (max-width: 640px) {
+    table {
+        width: 500px;
+        overflow-x: scroll;
+
+        thead {
+            text-align: start;
+        }
+
+        tbody {
+            text-align: center;
+
+            tr {
+                .status {
+                    width: 90px;
+                    padding: 6px 2px;
+                }
+
+                .primary {
+                    font-size: 8px;
+                }
+            }
+        }
+
+        tr {
+            font-size: 11px;
         }
     }
 }

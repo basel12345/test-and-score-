@@ -1,8 +1,17 @@
 <div class="layout-container d-flex">
+    @if (screenWidth >= 959) {
     <aside class="side-bar-section">
         <app-side-bar />
     </aside>
-    <div class="main-section">
+    } @else {
+    <aside [ngClass]="{
+            'side-bar-section-absolute-active': sideBarService.openSideBar,
+            'side-bar-section-absolute-right': !sideBarService.openSideBar && themeModeService.direction==='rtl',
+            'side-bar-section-absolute': !sideBarService.openSideBar}">
+        <app-side-bar />
+    </aside>
+    }
+    <div class="main-section" [ngStyle]="{'width': true ? '100%' : 'calc(100% - 268px)'}">
         <header>
             <app-nav-bar />
         </header>

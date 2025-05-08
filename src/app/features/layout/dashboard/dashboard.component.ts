@@ -152,11 +152,14 @@ export class DashboardComponent implements OnInit {
     });
   }
 
-
-
   filter(search: string) {
     this.statusFilter = search;
     this.items = this.allItems.filter(res => res.status === search);
     this.isFilter = false;
+  }
+
+  removeFilter() {
+    this.statusFilter = "";
+    this.items = this.allItems.filter(res => res);
   }
 }

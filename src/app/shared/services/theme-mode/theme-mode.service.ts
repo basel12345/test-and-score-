@@ -15,8 +15,6 @@ export class ThemeModeService {
   ) {
     this.isBrowser = isPlatformBrowser(this.platformId);
     if (this.isBrowser) {
-      console.log(localStorage.getItem('theme'));
-      
       this.isDarkMode = localStorage.getItem('theme') === 'dark';
       this.toggleTheme(this.isDarkMode);
     }
@@ -25,7 +23,12 @@ export class ThemeModeService {
   toggleTheme(theme: boolean) {
     this.isDarkMode = theme;
     localStorage.setItem('theme', this.isDarkMode ? 'dark' : 'light');
-    if(this.isDarkMode) this.document.body.classList.add('dark-mode');
+    if (this.isDarkMode) this.document.body.classList.add('dark-mode');
     else this.document.body.classList.remove('dark-mode');
+  }
+
+  get direction(): string | null {
+    if (isPlatformBrowser(this.platformId)) return localStorage.getItem('dir')
+    else return 'ltr'
   }
 }

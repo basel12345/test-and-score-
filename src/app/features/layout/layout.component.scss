@@ -28,3 +28,38 @@
         padding: 0;
     }
 }
+
+@media screen and (max-width: 960px) {
+
+    .side-bar-section-absolute {
+        transform: translateX(-180%);
+        width: 268px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        transition: all .3s ease-in-out;
+    }
+
+    .side-bar-section-absolute-right {
+        transform: translateX(180%);
+        width: 268px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        transition: all .3s ease-in-out;
+
+    }
+
+    .side-bar-section-absolute-active {
+        transform: translateX(0%);
+        width: 268px;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        z-index: 9999;
+        transition: all .3s ease-in-out;
+    }
+
+}

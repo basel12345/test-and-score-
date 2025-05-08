@@ -5,7 +5,7 @@
             font-weight: 700;
             font-size: 32px;
             line-height: 48px;
-            letter-spacing: 0%;
+            letter-spacing: 0;
             vertical-align: middle;
             color: var(--side-bar-menu-item-link);
         }
@@ -22,7 +22,7 @@
             font-weight: 700;
             font-size: 24px;
             line-height: 29px;
-            letter-spacing: 0%;
+            letter-spacing: 0;
             vertical-align: middle;
             color: var(--side-bar-menu-item-link);
         }
@@ -105,6 +105,19 @@
                     background-color: transparent;
                     border: 1px solid var(--filter-button-color);
                     border-radius: 8px;
+                    position: relative;
+
+                    a {
+                        position: absolute;
+                        bottom: 30px;
+                        left: 0;
+                        background-color: var(--background-color-container);
+                        color: var(--side-bar-menu-item-link-drop-down);
+                        width: 12px;
+                        height: 12px;
+                        border-radius: 50%;
+                        font-size: 8px;
+                    }
                 }
 
                 .drop-down {
@@ -205,5 +218,84 @@
         letter-spacing: 0;
         text-align: start;
         color: var(--incomplete-color);
+    }
+}
+
+
+@media (max-width: 768px) {
+    .p-ripple {
+        font-size: 12px !important;
+        padding: 16px 5px !important;
+    }
+
+    .dashboard-progress {
+
+        .dashboard-progress-item-title {
+            padding-bottom: 15px;
+
+            &::after {
+                width: 100% !important;
+                height: 1px !important;
+            }
+        }
+
+        .progress-item-title {
+            padding-top: 15px;
+        }
+    }
+}
+
+@media (min-width: 390px) and (max-width: 522px) {
+
+    .dashboard-container {
+        .dashboard-header {
+            h1 {
+                font-size: 25px;
+            }
+        }
+
+        .dashboard-progress {
+            h2 {
+                font-size: 20px;
+            }
+        }
+    }
+
+    .filter {
+        justify-content: center;
+
+        button {
+            width: 100% !important;
+        }
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .p-ripple {
+        width: 45px;
+        font-size: 8px !important;
+        padding: 10px 5px !important;
+    }
+
+    .dashboard-container {
+        .dashboard-header {
+            h1 {
+                font-size: 20px;
+            }
+        }
+
+        .dashboard-progress {
+            h2 {
+                font-size: 15px;
+            }
+        }
+    }
+
+    .filter {
+        justify-content: center;
+
+        button {
+            width: 100% !important;
+        }
     }
 }
