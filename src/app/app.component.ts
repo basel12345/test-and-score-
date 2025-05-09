@@ -14,7 +14,11 @@ export class AppComponent {
   dir!: string | null;
   constructor(@Inject(PLATFORM_ID) private platformId: Object) {
     if (isPlatformBrowser(this.platformId)) {
+      if(!localStorage.getItem('dir')) {
+        localStorage.setItem('dir', 'ltr')
+      }
       this.dir = localStorage.getItem('dir')
+
     }
   }
 }
