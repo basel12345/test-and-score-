@@ -87,7 +87,8 @@
 
     .dashboard-grid {
         background-color: var(--side-bar-background-color);
-
+        border-radius: 8px;
+        
         ::ng-deep {
             .p-tabs {
                 overflow: hidden;
@@ -107,17 +108,17 @@
                     border-radius: 8px;
                     position: relative;
 
-                    a {
-                        position: absolute;
-                        bottom: 20px;
-                        left: 0;
-                        background-color: var(--background-color-container);
-                        color: var(--side-bar-menu-item-link-drop-down);
-                        width: 15px;
-                        height: 25px;
-                        border-radius: 50%;
-                        font-size: 17px;
-                    }
+                    // a {
+                    //     position: absolute;
+                    //     bottom: 20px;
+                    //     left: 0;
+                    //     background-color: var(--background-color-container);
+                    //     color: var(--side-bar-menu-item-link-drop-down);
+                    //     width: 15px;
+                    //     height: 25px;
+                    //     border-radius: 50%;
+                    //     font-size: 17px;
+                    // }
                 }
 
                 .drop-down {
