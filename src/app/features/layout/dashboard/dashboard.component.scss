@@ -272,7 +272,7 @@
 
 @media screen and (max-width: 390px) {
     .p-ripple {
-        width: 45px;
+        font-size: min(6vw, 40px);
         font-size: 8px !important;
         padding: 10px 5px !important;
     }
