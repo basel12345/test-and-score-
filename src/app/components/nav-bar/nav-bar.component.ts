@@ -77,5 +77,6 @@ export class NavBarComponent implements OnInit {
 
   toogleSideBar() {
     this.sidebarService.openSideBar = !this.sidebarService.openSideBar;
+    if (!this.sidebarService.openSideBar) this.sidebarService.subMenu = false;
   }
 }

@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class SideBarService {
   public openSideBar: boolean = false;
+  public subMenu: boolean = false;
   constructor() { }
 }

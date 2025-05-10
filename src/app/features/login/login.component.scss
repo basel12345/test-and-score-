@@ -38,6 +38,7 @@
         #rememberMeLabel {
             color: #111827;
             font-weight: 400;
+            font-size: clamp(14px, 2vw, 16px);
 
             #rememberMe {
                 width: 20px;
@@ -49,6 +50,7 @@
         a {
             cursor: pointer;
             color: #3B82F6;
+            font-size: clamp(14px, 2vw, 16px);
         }
 
         button {
@@ -109,5 +111,14 @@
             }
         }
 
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .login-container {
+        height: 100dvh;
+        .login {
+            padding: 58px 24px;
+        }
     }
 }
