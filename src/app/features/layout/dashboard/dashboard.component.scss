@@ -159,24 +159,25 @@
                 }
             }
 
-            .p-tablist-content{
+            .p-tablist-content {
                 overflow: auto;
+
                 .p-tablist-tab-list {
                     border: none;
                     height: 56px;
                     overflow-x: auto !important;
+
                     .p-ripple {
                         font-family: 'LoewNextMeduim';
                         font-weight: 700;
                         font-size: 16px;
                         line-height: 26px;
                         letter-spacing: 0;
-    
                         color: var(--side-bar-menu-item-link) !important;
                         padding: 16px 24px;
                         border: none;
                         position: relative;
-    
+
                         &::after {
                             content: "";
                             display: block;
@@ -187,13 +188,13 @@
                             bottom: 10px;
                             right: 0;
                         }
-    
+
                         &:hover {
                             cursor: pointer;
                             background-color: var(--background-color-container-table);
                         }
                     }
-    
+
                     .p-tab-active {
                         font-family: 'LoewNextMeduim';
                         background: var(--p-tabs-tab-active-background);
