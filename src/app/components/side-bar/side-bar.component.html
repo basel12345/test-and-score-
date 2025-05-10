@@ -112,7 +112,7 @@
             </div>
         </div>
         <div #profileDiv class="side-bar-footer-item footer-item d-flex align-items-center justify-content-between"
-            (click)="sideBarService.subMenu= !sideBarService.subMenu">
+            (mouseenter)="sideBarService.subMenu= true" (mouseleave)="sideBarService.subMenu= false">
             <div class="d-flex align-items-center">
                 <div class="icon">
                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
