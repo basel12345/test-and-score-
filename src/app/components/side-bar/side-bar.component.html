@@ -147,7 +147,7 @@
                     fill="var(--side-bar-menu-item-link)" />
             </svg>
             @if (sideBarService.subMenu) {
-            <div class="profile" #subMenuDiv>
+            <div class="profile-left" [ngClass]="themeModeService.direction === 'rtl' ? 'profile-right' : 'profile-left'" #subMenuDiv>
                 <ul>
                     <li class="p-2 d-flex align-items-center">
                         <div class="icon p-2 m-1">
