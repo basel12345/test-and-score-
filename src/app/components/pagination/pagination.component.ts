@@ -16,8 +16,10 @@ export class PaginationComponent {
   page: number = 0;
   index: number = 1;
   currentPage: number = 1;
+  countPage: number = 10;
+  countInPages: Array<number> = [10, 20, 30, 40, 50];
 
-  constructor(public themeModeService: ThemeModeService) {}
+  constructor(public themeModeService: ThemeModeService) { }
 
   get pageNumbers(): number[] {
     return Array.from({ length: this.totalPages }, (_, i) => i + 1);

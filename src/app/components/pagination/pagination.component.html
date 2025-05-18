@@ -55,7 +55,7 @@
                 }
         </div>
         <div class="d-none col-6 select-page d-md-flex justify-content-end align-items-center">
-            Show items <p-select [options]="pageNumbers" [(ngModel)]="currentPage" class="w-full mx-2" /> of {{totalPages}}
+            Show items <p-select [options]="countInPages" [(ngModel)]="countPage" class="w-full mx-2" /> of {{countInPages[countInPages.length - 1]}}
         </div>
     </div>
 </div>
