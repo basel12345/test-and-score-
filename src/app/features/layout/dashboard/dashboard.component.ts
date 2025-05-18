@@ -27,7 +27,7 @@ export class DashboardComponent implements OnInit {
     },
     {
       test: 'Test 1',
-      part1: '7.0',
+      part1: 'lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem lorem',
       part2: '7.0',
       part3: '7.0',
       score: '7.0',

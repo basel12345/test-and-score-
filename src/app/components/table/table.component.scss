@@ -15,7 +15,7 @@ table {
     tbody {
         tr {
             font-family: 'LoewNextMeduim';
-            height: 50px;
+            min-height: 50px;
             padding-inline: 24px;
             background-color: var(--secondary-color);
             color: var(--progress-item-title-color);
